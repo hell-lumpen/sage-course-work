@@ -1,0 +1,7 @@
+*.aux
+*.log
+*.out
+*.scmd
+*.sout
+*.gz
+*.toc

@@ -1,0 +1,53 @@
+\section{Матрицы — Матричные уравнения}
+
+\begin{sagesilent}
+    A = matrix(QQ, [[2, 2, -3], [-1, 0, 4], [0, 2, 2]])
+    B = matrix(QQ, [[-2, 4, -6], [2, 0, 8], [4, 4, 2]])    
+    C = matrix(QQ, [[2, 1, 1], [-1,-1, 4], [1, 0, 3]])
+\end{sagesilent}
+
+Дано уравнение:
+
+$-2X\sage{A} - 0.5\sage{B} = \sage{C}$
+~\\
+
+Решение уравнения сводится к двум вариантам умножения:
+~\\
+
+\begin{minipage}{0.4\textwidth}
+	$A*X = B$
+	
+	$A^{-1}* A*X = A^{-1}*B$
+	
+	$X = A^{-1}*B$
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+	$X*A=B$
+	
+	$X*A*A^{-1} = B*A^{-1}$
+	
+	$X = B*A^{-1}$
+	
+\end{minipage}
+
+\begin{sagesilent}
+	A = -2 * A
+	B = -1/2 * B
+\end{sagesilent}
+
+~\\
+
+$X * \sage{A} + \sage{B} = \sage{C}$
+
+~\\
+\begin{sagesilent}
+	K = C - B
+	answer = B * A.inverse()
+\end{sagesilent}
+
+$X * \sage{A} = \sage{K}$
+
+~\\
+
+$X = \sage{answer}$
